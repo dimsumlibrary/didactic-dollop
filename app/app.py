@@ -18,7 +18,7 @@ def hello_world():
         if str(myage) =='' or str(mysalary) =='' or str(mymarital) == '':
             return render_template('index.html', href2='Please insert your age, salary and marital status.')
         else:
-            model = load('app/movie1-recommender.joblib')
+            model = load('app/movie-recommender.joblib')
             np_arr = np.array([myage, mysalary, mymarital])
             predictions = model.predict([np_arr])  
             predictions_to_str = str(predictions)
